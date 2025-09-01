@@ -1,7 +1,7 @@
 <template>
     <div class="trending">
         <div class="container">
-            <h1>Trending Movies</h1>
+            <h1 class="trending-title">Trending Movies</h1>
             <MovieCard :movies="trendingMovies" :skeletonCount="skeletonCount" :loading="loading"/>
         </div>
     </div>
@@ -26,6 +26,9 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.trending-title{
+  font-size : 1.5rem
+}
 .trending h1{
   padding:30px 0;
 }

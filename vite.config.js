@@ -6,10 +6,7 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     minify: 'terser',
-    terserOptions: {
-      compress: true,
-      mangle: true,
-    },
+    sourcemap: true, // فعّل source maps
   },
   server: {
     middleware: [compression()],
