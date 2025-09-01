@@ -9,17 +9,21 @@
         v-if="loading"
         type="image, article"
         class="skeleton-loader"
+        :width="200" :height="350"
       ></v-skeleton-loader>
       <div v-else>
         <img
-          :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+          :src="movie.poster_path ? 'https://image.tmdb.org/t/p/w500' + movie.poster_path :'https://via.placeholder.com/200x350'"
           alt="Movie Poster"
           class="movie-image"
+          loading = "lazy"
+          fetchpriority="high"
           @click="goToDetails(movie.id)"
         />
         <div class="movie-info">
           <h3 class="movie-title" :title="movie.title">{{ movie.title }}</h3>
-          <p class="movie-rating">⭐ {{ movie.vote_average }}</p>
+          <p class="movie-rating">⭐ {{ movie.vote_average.toFixed(2) }}</p>
+          <button class="watch-button" @click="goToDetails(movie.id)">Watch</button>
         </div>
       </div>
     </div>
@@ -51,11 +55,10 @@ function goToDetails(userId){
 
 <style scoped>
 .movies-card{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1%;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 1%;
+  flex-wrap: wrap;
 }
 .movie-card {
   width: 24%;
@@ -80,6 +83,8 @@ function goToDetails(userId){
 }
 
 .movie-info {
+  display:flex;
+  flex-direction:column;
   padding: 10px;
   text-align: center;
 }
@@ -107,10 +112,11 @@ function goToDetails(userId){
   border-radius: 4px;
   cursor: pointer;
   font-size: 1em;
+  margin:5px 0;
 }
 
 .watch-button:hover {
-  background-color: #f40612;
+  background-color: #172026;
 }
 
 @media (max-width:991px){

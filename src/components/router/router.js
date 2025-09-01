@@ -1,10 +1,11 @@
 import { createRouter , createWebHistory } from 'vue-router'
-import DefaultLayout from '../DefaultLayout.vue'
-import HomePage from '../HomePage.vue'
-import TrendingMovies from '../TrendingMovies.vue'
-import ActorsPage from '../ActorsPage.vue'
-import GenresPage from '../GenresPage.vue'
-import MovieDetailsPage from '../MovieDetailsPage.vue'
+
+const DefaultLayout = ()=> import('../DefaultLayout.vue')
+const HomePage = ()=> import('../HomePage.vue')
+const TrendingMovies = ()=> import('../TrendingMovies.vue')
+const ActorsPage = ()=> import('../ActorsPage.vue')
+const GenresPage = ()=> import('../GenresPage.vue')
+const MovieDetailsPage = ()=> import('../MovieDetailsPage.vue')
 const routes = [
     {
         path : '/',

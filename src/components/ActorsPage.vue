@@ -11,7 +11,7 @@
                     >
                     </v-skeleton-loader>
                     <div class="actor-information" v-else>
-                        <img :src="'https://image.tmdb.org/t/p/w500' + actor.profile_path" alt="actor" class="actor-image"/>
+                        <img :src="'https://image.tmdb.org/t/p/w500' + actor.profile_path" alt="actor" class="actor-image" loading="lazy"/>
                         <div class="actor-info">
                             <p>{{actor.name}}</p>
                         </div>
@@ -47,7 +47,6 @@ onMounted(() =>{
 }
 .actors-card {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 1%;

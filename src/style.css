@@ -12,7 +12,7 @@ body{
 
 /* Start Container */
 .container{
-    width: 90%;
+    width: 93%;
     padding-right: calc(var(--bs-gutter-x) * .5);
     padding-left: calc(var(--bs-gutter-x) * .5);
     margin-right: auto;
