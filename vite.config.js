@@ -1,8 +1,17 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import compression from 'compression'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  minify: 'terser',
+  build: {
+    minify: 'terser',
+    terserOptions: {
+      compress: true,
+      mangle: true,
+    },
+  },
+  server: {
+    middleware: [compression()],
+  },
 })

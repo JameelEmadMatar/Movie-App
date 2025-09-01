@@ -16,8 +16,10 @@
           :src="movie.poster_path ? 'https://image.tmdb.org/t/p/w500' + movie.poster_path :'https://via.placeholder.com/200x350'"
           alt="Movie Poster"
           class="movie-image"
-          loading = "lazy"
-          fetchpriority="high"
+          width="200"
+          height="350"
+          loading="lazy"
+          fetchpriority="index === 0 ? 'high' : 'auto'"
           @click="goToDetails(movie.id)"
         />
         <div class="movie-info">
