@@ -43,6 +43,7 @@ onMounted(() =>{
 
 <style scoped>
 .actors h1{
+    font-size:1.5rem;
     padding:30px 0;
 }
 .actors-card {

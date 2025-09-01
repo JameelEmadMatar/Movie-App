@@ -61,6 +61,9 @@ nav .navbar-content .logo .title{
     gap: 10px;
     align-items: center;
 }
+nav .navbar-content .logo .title h1{
+    font-size:1.5rem;
+}
 nav .navbar-content .logo svg{
     width:30px;
     height:30px;
