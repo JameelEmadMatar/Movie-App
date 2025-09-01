@@ -9,7 +9,6 @@
         v-if="loading"
         type="image, article"
         class="skeleton-loader"
-        :width="200" :height="350"
       ></v-skeleton-loader>
       <div v-else>
         <img
@@ -23,7 +22,7 @@
           @click="goToDetails(movie.id)"
         />
         <div class="movie-info">
-          <h3 class="movie-title" :title="movie.title">{{ movie.title }}</h3>
+          <h2 class="movie-title" :title="movie.title">{{ movie.title }}</h2>
           <p class="movie-rating">⭐ {{ movie.vote_average.toFixed(2) }}</p>
           <button class="watch-button" @click="goToDetails(movie.id)">Watch</button>
         </div>
@@ -95,7 +94,7 @@ function goToDetails(userId){
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  font-size: 16px;
+  font-size: 1.125rem;
   margin: 5px 0;
   color: #e0e0e0;
 }

@@ -6,6 +6,9 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     minify: 'terser',
+    rollupOptions: {
+      treeshake: true, // إزالة الكود الغير مستخدم
+    },
     sourcemap: true, // فعّل source maps
   },
   server: {
